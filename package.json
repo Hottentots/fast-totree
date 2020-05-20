@@ -1,0 +1,19 @@
+{
+  "name": "fast-totree",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "O(N)",
+    "fast",
+    "array",
+    "list",
+    "to",
+    "tree"
+  ],
+  "author": "leastcoding",
+  "license": "MIT"
+}
