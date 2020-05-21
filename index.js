@@ -1,44 +1,53 @@
-/**
- * List to Tree O(N)复杂度
- * 
- * <leastcoding@foxmail.com>
- * */
-Array.prototype.toTree = function(key = 'id',parentKey = 'parentId',subname = 'chidren',start = '0'){
+Array.prototype.toTree = function(
+config = {
 
+    key:'id',
+    pid:'parentId',
+    chidren:'chidren',
+    value:'0'
+})
+{
+    
+    let tree    = [];
+    let relation = {}; relation[config.value] = [];
 
-    let  tree = [];
-    let  temp = {'0':[]};
+    let count   = this.length;
 
-    let length = this.length;
+    for(let i = 0;i < count;i++)
+    {
+        let key =this[i][config.pid];
 
-    for(let i=0;i<length;i++)                   
-    {   
+        if(!relation[key])
+        {
 
-        let attr =this[i][parentKey] ;
+            relation[key] = [];
+        } 
 
-        if(!temp[attr])temp[attr] = [];
-
-        temp[attr].push(i);
-
-        if(attr == start) tree.push(this[i]);
+        relation[key].push(i);
     }
 
-    for(let i=0;i<length;i++)                         
-    { 
-        let attr = this[i][key];
+    for(let i = 0;i < count;i++)
+    {
+        let key = this[i][config.key];
 
-        if(temp[attr]){
+        if(relation[key])
+        {
 
-            let count = temp[attr].length;
+            let total = relation[key].length;
 
-            this[i][subname] = [];
+            this[i][config.chidren] = [];
 
-            for(let j=0;j<count;j++)
+            for(let j = 0;j < total;j++)
             {
-                this[i][subname].push(this[temp[attr][j]]);
+                this[i][config.chidren].push(this[relation[key][j]]);
             }
         }       
     }
-    
+   
+    relation[config.value].forEach(element => {
+        
+        tree.push(this[element]);
+    });
+
     return tree;
 }

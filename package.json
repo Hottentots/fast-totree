@@ -1,11 +1,8 @@
 {
   "name": "fast-totree",
-  "version": "1.2.0",
-  "description": "",
+  "version": "1.2.1",
+  "description": "fast list to tree O(N)",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/newthing/fast-totree.git"
@@ -19,5 +16,9 @@
     "tree"
   ],
   "author": "leastcoding",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newthing/fast-totree/issues"
+  },
+  "homepage": "https://github.com/newthing/fast-totree#readme"
 }
