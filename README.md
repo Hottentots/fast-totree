@@ -22,10 +22,10 @@ let list = [
   {id:5,name:'max5',parentId:2},
 ];
 
-
+//如果数据格式与上述一致，比较键为id、parentId
 let tree = list.toTree();
 
-//reset the config {_id:1,name:'max',_pid:0}
+//如果不一致，则重置配置文件，示例数据格式 {_id:1,name:'max',_pid:0}
 const config = {
 
     key:'_id',
